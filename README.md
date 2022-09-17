@@ -9,7 +9,7 @@ Una aplicación de reproductor de música. Un reproductor donde se pueda reprodu
 
 
 <figure>
-  <img src="docs/img/inicio.jpg" alt="Play_view" margin  width='100%' style="border:5px solid black"/>
+  <img src="docs/img/inicio.jpg" alt="Play_view" margin  width='50%' style="border:5px solid black"/>
   <figcaption>Inicio del reproductor</figcaption>
 </figure>
 
