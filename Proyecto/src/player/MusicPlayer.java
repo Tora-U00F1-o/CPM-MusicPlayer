@@ -6,12 +6,14 @@ import javazoom.jlgui.basicplayer.*;
 
 public class MusicPlayer {
 	private BasicPlayer basicPlayer = null;
+	private File filePlaying;
 	
 	public MusicPlayer(){
 		basicPlayer = new BasicPlayer();
 	}
 	
 	public void play (File file){
+		filePlaying = file;
 		try {
 			basicPlayer.open(file);
 			basicPlayer.play();
@@ -19,7 +21,12 @@ public class MusicPlayer {
 		catch (Exception e){}
 	}
 	
+	public File getMusicPlaying (){
+		return filePlaying;
+	}
+	
 	public void stop(){
+		filePlaying = null;
 		try {
 			basicPlayer.stop();
 		}

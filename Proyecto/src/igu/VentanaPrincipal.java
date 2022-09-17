@@ -386,7 +386,7 @@ public class VentanaPrincipal extends JFrame {
 		return mnItAbout;
 	}
 	private void showAboutContents() {
-		String msg = "Music Player made by Jorge Toraño\n"+"v1.0 Asturias\n";
+		String msg = "<html>Music Player v.1.0<br>Desarrollador: Jorge Toraño UO276853<br>Email de contacto: UO276853@uniovi.es</FONT></html>";
 		String title = "About of JTH Music Player";
 		JOptionPane.showMessageDialog(this, msg, title, JOptionPane.INFORMATION_MESSAGE);
 	}
@@ -524,7 +524,7 @@ public class VentanaPrincipal extends JFrame {
 		}
 		return btnPlay;
 	}
-	private void play() { //TODO
+	private void play() {
 		try {
 			File f = listPlay.getSelectedValue().getF();
 			player.play(f);
@@ -555,7 +555,7 @@ public class VentanaPrincipal extends JFrame {
 		return pnBtnPlay;
 	}
 
-	private JButton getBtnStop() {
+	private JButton getBtnStop() { //TODO
 		if (btnStop == null) {
 			btnStop = new JButton("\u25A0");
 			btnStop.addActionListener(new ActionListener() {
@@ -593,13 +593,17 @@ public class VentanaPrincipal extends JFrame {
 			play();
 		}
 	};
-	private JButton getBtnDelete_1_3() {
+	private JButton getBtnDelete_1_3() {//TODO
 		if (btnDelete_1_3 == null) {
 			btnDelete_1_3 = new JButton("Delete");
 			btnDelete_1_3.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					for(MyFile f: listPlay.getSelectedValuesList())
+					for(MyFile f: listPlay.getSelectedValuesList()) {
+						if(f.isEqualsFile(player.getMusicPlaying())) {
+							player.stop();
+						}
 						modelListPlay.removeElement(f);
+					}
 				}
 			});
 			btnDelete_1_3.setFont(new Font("Dialog", Font.BOLD, 15));
