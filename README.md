@@ -1,7 +1,9 @@
 # CPM-MusicPlayer v.1.0
 
 Aplicación desarrollada individualmente para la asignatura Comunicación Persona-Maquina de 2º de grado de UniOvi.
+
 Uno de mis primeros proyectos con ui grafica. Y el primero con archivos de audio.
+
 Desarrollado en Java con Eclipse + WindowBuilder
 #
 ## ¿Qué es?
