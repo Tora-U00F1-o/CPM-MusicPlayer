@@ -1,0 +1,34 @@
+//INCORPORACION DE UN SISTEMA DE AYUDA EN UN PROYECTO JAVA
+
+// Incorporar al proyecto la libreria jhall.jar de jh2.0\javahelp\lib Para ello:
+ 1.- Copiarla en la carpeta lib
+ 2.- Referenciarla
+
+//Importar:
+import javax.help.*;
+import java.net.*;
+import java.io.*;
+
+//Incorporar este metodo en la Ventana principal e invocarlo desde el constructor
+private void cargaAyuda(){
+
+   URL hsURL;
+   HelpSet hs;
+
+    try {
+	    	File fichero = new File("help/ayuda.hs");
+	    	hsURL = fichero.toURI().toURL();
+	        hs = new HelpSet(null, hsURL);
+	      }
+
+    catch (Exception e){
+      System.out.println("Ayuda no encontrada");
+      return;
+   }
+
+   HelpBroker hb = hs.createHelpBroker();
+
+   hb.enableHelpKey(getRootPane(),/*"alias html introduccion"*/, hs);
+   hb.enableHelpOnButton(componente, /*"alias html introduccion"*/, hs);
+   hb.enableHelp(componente, /*"alias html concreto"*/, hs);
+ }
